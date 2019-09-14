@@ -61,6 +61,7 @@
     height: 100%;
     background-size:cover ;
     min-height: 90vh;
+    top: -10px;
   }
   #show-blog{
     max-width: 800px;
@@ -81,7 +82,7 @@
     font-size:24px;
   }
   h1,input[type="text"]{
-    margin: 10px 20px 10px;
+    margin: 0px 20px 10px;
   }
   a{
     text-decoration: none;

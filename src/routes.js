@@ -6,6 +6,7 @@ import Immortal from './components/Dota2Immortal'
 import SassLogIn from './components/SassLogIn'
 import SortShow from './components/SortShow'
 import ShowGame from './components/ShowGame'
+import RegExpTest from './components/RegExpTest'
 
 export default[
   {path:'/',component:ShowBlog},
@@ -16,4 +17,5 @@ export default[
   {path:'/sass',component:SassLogIn},
   {path:'/sortshow',component:SortShow},
   {path:'/game',component:ShowGame},
+  {path:'/regtest',component:RegExpTest},
 ]

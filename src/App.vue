@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <blog-header></blog-header>
-    <br><br><br><br>
     <router-view></router-view>
   </div>
 </template>

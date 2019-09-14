@@ -1,13 +1,17 @@
 <template>
     <nav>
-      <ul>
+      <ul class="list">
         <li><router-link to="/" exact>Blog</router-link></li>
-        <li> <router-link to="/add" exact>Write Blog</router-link></li>
+        <li><router-link to="/add" exact>Write Blog</router-link></li>
         <li><router-link to="/game" exact>Game</router-link></li>
-        <li><router-link to="/sass" exact>Sass</router-link></li>
-        <li><router-link to="/immortal" exact>Dota2Immortal </router-link></li>
-        <li><router-link to="/showprogress" exact>Progress</router-link></li>
-<!--        <li><router-link to = "/sortshow">SortShow</router-link></li>-->
+        <li><router-link to="/immortal" exact>Dota2 </router-link></li>
+        <li @mouseover="over" @mouseout="out"> <a>Test</a>
+          <div class="down">
+            <router-link to="/sass" exact>Sass</router-link>
+            <router-link to="/showprogress" exact>Progress</router-link>
+            <router-link to="/regtest" exact>Test</router-link>
+          </div>
+        </li>
       </ul>
     </nav>
 </template>
@@ -15,6 +19,14 @@
 <script>
     export default {
         name: "BlogHeader",
+      methods:{
+          over(){
+            document.querySelector('.down').style.display='block';
+          },
+          out(){
+            document.querySelector('.down').style.display='none';
+          }
+      }
     }
 </script>
 
@@ -33,15 +45,13 @@
     margin: 0 10px;
     display: inline-block;
   }
-
   a{
     transition: all 0.5s;
     color: #FFF;
     text-decoration: none;
     padding: 16px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
+    cursor: pointer;
   }
   a:hover{
      color: #5ef0ff;
@@ -50,12 +60,26 @@
    }
   nav{
     width: 100%;
-    position: fixed;
+    position: relative;
     background: rgb(223, 93, 219);
     padding: 30px 0;
-    margin-bottom: 20px;
+  }
+  .list{
+    position: relative;
+  }
+  .down{
+    position: absolute;
+    background: rgb(223, 93, 219);
+    display: none;
+  }
+  .down a{
+    display: block;
+    border-radius: 0;
   }
   .router-link-active{
-    background: rgba(255,255,255,0.8);
+    background-color: #ccc;
+    color: #222;
+    opacity: 0.8;
   }
+
 </style>
