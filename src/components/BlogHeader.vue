@@ -55,7 +55,6 @@
   }
   a:hover{
      color: #5ef0ff;
-     font-size: 24px;
      text-shadow: 0 0 32px #eeeeee;
    }
   nav{

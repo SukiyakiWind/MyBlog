@@ -7,8 +7,12 @@
       <label> Input the regexp
         <input type="text" v-model="regExp" placeholder="输入正则">
       </label>
+      <label> Input the replace
+        <input type="text" v-model="replace" placeholder="输入代替值">
+      </label>
       <button @click="compute">Computed</button>
-      <button @click="clear">clear</button>
+      <button @click="clear">Clear</button>
+      <button @click="replacefun">Replace</button>
     </div>
 
     <hr>
@@ -18,6 +22,8 @@
       <p>Str:{{str}}</p>
       <p>RegExp:{{regExp}}</p>
       <p>Result:{{result}}</p>
+      <p>Replace:{{replace}}</p>
+      <p>OutputReplace:{{outputReplace}}</p>
     </div>
   </div>
 </template>
@@ -28,12 +34,15 @@
       data(){
           return{
             regExp:'',
-            str:'',
+            str:'1997-06-25 25+4i 23-2i',
             result:[],
+            replace:'',
+            outputReplace:'',
           }
       },
       methods:{
           compute(){
+            this.result = [];
             this.result = this.str.match(eval(this.regExp));
             // console.log(this.str);
             // console.log(eval(this.regExp));
@@ -43,6 +52,13 @@
             this.result = [];
             this.regExp = '';
             this.str = '';
+            this.replace = '';
+            this.outputReplace = '';
+          },
+          replacefun(){
+            this.outputReplace = '';
+            this.outputReplace = this.str.replace(eval(this.regExp),this.replace);
+
           }
       }
     }
@@ -59,18 +75,18 @@
   }
   .input{
     margin: 0 auto;
-    width: 500px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
   }
   .output{
     margin: 0 auto;
-    width: 500px;
-    height: 200px;
+    width: 600px;
+    height: 400px;
   }
   input{
     display: inline-block;
     height: 30px;
-    width: 300px;
+    width: 400px;
     font-size: 24px;
   }
   label{
