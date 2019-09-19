@@ -41,7 +41,6 @@
             }
             this.blogs = blogsArray;
             this.net = true;
-            // this.blogs = blogsArray.splice(0,10);]
           })
       },
       computed:{

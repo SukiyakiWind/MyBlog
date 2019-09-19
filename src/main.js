@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App'
-// import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import Routes from'./routes'
 import axios from 'axios'
@@ -14,6 +13,8 @@ Vue.use(VueRouter);
 // el 是元素， binding.value是传过来的值 ，arg 是参数
 // eg: <p v-theme:col="'wide'">{{ app }} </p>
 //   theme是名字， col是参数binding.arg ，wide是binding.value， app是el元素。
+
+
 Vue.directive('rainbow',{
   bind(el,binding,vnode){
     el.style.color = '#' + Math.random().toString(16).slice(2,8);

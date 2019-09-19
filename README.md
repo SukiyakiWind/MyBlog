@@ -17,10 +17,10 @@ npm run build
 
 ```
 ## 具体网址
-> www.sukiyaki.xyz
+> www.sukiyaki.xyz（尚未备案完成）
 
 ## 路由配置
-```angular2
+```
 routes.js
 import ShowBlog from './components/ShowBlog'
 import AddBlog from './components/AddBlog'
@@ -62,4 +62,27 @@ App.vue
   </div>
 </template>
 
+```
+##全局自定义指令和过滤器
+ ```
+Vue.directive('rainbow',{
+  bind(el,binding,vnode){
+    el.style.color = '#' + Math.random().toString(16).slice(2,8);
+  }
+});
+Vue.directive('theme',{
+  bind(el,binding,vnode){
+   if(binding.value === 'wide'){
+     el.style.maxWidth = '1000px';
+   }else if(binding.value === 'narrow'){
+     el.style.maxWidth = '500px';
+   }
+  }
+});
+Vue.filter('to-uppercase', function(value){
+   return value.toUpperCase();
+});
+Vue.filter('snippet',function (value) {
+  return value.slice(0,100)+ '...';
+});
 ```

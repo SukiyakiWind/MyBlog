@@ -44,9 +44,6 @@
           compute(){
             this.result = [];
             this.result = this.str.match(eval(this.regExp));
-            // console.log(this.str);
-            // console.log(eval(this.regExp));
-            // console.log(this.result);
           },
           clear(){
             this.result = [];
