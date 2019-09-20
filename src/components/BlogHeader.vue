@@ -9,7 +9,8 @@
           <div class="down">
             <router-link to="/sass" exact>Sass</router-link>
             <router-link to="/showprogress" exact>Progress</router-link>
-            <router-link to="/regtest" exact>Test</router-link>
+            <router-link to="/regtest" exact>Reg</router-link>
+            <router-link to="/teststudy" exact>Study</router-link>
           </div>
         </li>
       </ul>

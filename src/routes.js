@@ -7,6 +7,7 @@ import SassLogIn from './components/SassLogIn'
 import SortShow from './components/SortShow'
 import ShowGame from './components/ShowGame'
 import RegExpTest from './components/RegExpTest'
+import TestStudy from './components/TestStudy'
 
 export default[
   {path:'/',component:ShowBlog},
@@ -18,4 +19,5 @@ export default[
   {path:'/sortshow',component:SortShow},
   {path:'/game',component:ShowGame},
   {path:'/regtest',component:RegExpTest},
+  {path:'/teststudy',component:TestStudy},
 ]

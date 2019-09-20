@@ -14,9 +14,9 @@
     <hr>
     <div class="preview">
       <div class="left">
-        <p>All Number: {{allNumber}}</p>
-        <p>Single Price: {{singlePrice}}</p>
-        <p>Need Money : {{money}}</p>
+        <p>All Number: {{animatedNumber}}</p>
+        <p>Single Price: {{animatedPrice}}</p>
+        <p>Need Money :{{money}}</p>
         <p>Many: {{many}} </p>
 <!--        <p>Math Except : {{mathExpect}}</p>-->
       </div>
@@ -50,8 +50,10 @@
         name: "Dota2Immortal",
         data(){
           return{
-            singlePrice:'',
-            allNumber:'',
+            tweenedPrice:0,
+            tweenedNumber:0,
+            singlePrice:0,
+            allNumber:0,
             result:0,
             money:0,
             mathExpect:0,
@@ -67,7 +69,7 @@
       components:{
         DProgress,
       },
-        methods:{
+      methods:{
           compute:function (num) {
             let arr = [1/100000,1/27380,1/8614,1/4021,1/2303,1/1486,1/1037,1/764,1/586,1/464,1/376,1/311
                       ,1/262,1/223,1/193,1/168,1/148,1/131,1/117,1/105,1/95,1/86,1/79,1/72,1/66,1/61,1/57,
@@ -103,14 +105,31 @@
       computed:{
         exceptPer() {
           this.result = 0;
-          // console.log(this.result);
           for(let i = 0; i<= this.allNumber ;i++){
             this.result += (1 / this.arr2[i]);
           }
-          // console.log(this.allNumber);
-          // console.log(this.result);
           return Math.floor(this.result * 100);
         },
+        animatedNumber:function () {
+          return this.tweenedNumber.toFixed(0);
+        },
+        animatedPrice:function () {
+          return this.tweenedPrice.toFixed(0);
+        },
+      },
+      watch:{
+          allNumber:function (newValue) {
+            TweenLite.to(this.$data, 0.8, { tweenedNumber: newValue });
+          },
+          singlePrice:function (newValue) {
+            TweenLite.to(this.$data, 0.8, { tweenedPrice: newValue });
+          },
+      },
+      mounted() {
+        const oScript = document.createElement('script');
+        oScript.type = 'text/javascript';
+        oScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js';
+        document.body.appendChild(oScript);
       }
     }
 </script>

@@ -3,10 +3,8 @@
 <puzzle v-bind="puzzleConfig[level]" @next="handleNext" ></puzzle>
     <hr>
       <h3>我的贪吃蛇</h3>
-      <a href="https://sukiyakiwind.github.io/
-        Sukiyaki-sGame/Sukiyaki'sGreedSnakev3.0.html" >
-        https://sukiyakiwind.github.io/
-        Sukiyaki-sGame/Sukiyaki'sGreedSnakev3.0.html</a>
+      <a href="https://www.sukiyaki.xyz/Sukiyaki'sGame/Sukiyaki'sGreedSnakev3.0.html" >
+        https://www.sukiyaki.xyz/Sukiyaki'sGame/Sukiyaki'sGreedSnakev3.0.html</a>
     </div>
 </template>
 

@@ -17,8 +17,7 @@ npm run build
 
 ```
 ## 具体网址
-> www.sukiyaki.xyz（尚未备案完成）
-
+> www.sukiyaki.xyz
 ## 路由配置
 ```
 routes.js

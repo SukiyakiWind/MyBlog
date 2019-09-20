@@ -50,4 +50,41 @@ Vue.filter('snippet',function (value) {
 });
 ```
 1. <any>{{表达式 | 过滤器}}</any>
-   + eg:<h1>{{price | myCurrency}}</h1>
+   + eg:<h5>{{price | myCurrency}}</h5>
+
+##列表渲染
+### v-for
++ 使用循环数组的时候最好绑定一个唯一的key值,可以提高性能
+    + 不建议用索引去当key值
+    + 不能通过改变索引来更改数组（无法渲染）
+    + 不能通过更改数组长度来更改数组（无法渲染）
+    + 无法向对象内添加或删除属性
++ 只能通过数组方法来更改数组
+    + vue中重写了这些方法
+    + pop shift unshift splice sort reverse push
++ 用 vue.$set 方法来添加对象属性
+    + vue.$set(obj,key,value)
+1. 循环数组
+```
+v-for="(item,index) in arr"
+```
+2. 循环对象
+```
+v-for="(item,key,index)" in obj"
+```
+3. 循环数字,字符串
+```
+v-for="item in 10"
+v-for="item in 'Sukiyaki'"
+```
+### v-model
++ v-model实际是一个语法糖，是绑定+监听事项双向绑定
+
+### 三种常用属性
++ 寻找权重 data > methods > computed
+1. methods 
+    + 所有数据更新时就都发动一次（很浪费）
+2. computed
+    + 必须要有一个return的值，相关更新后就会发动一次
+3. watch
+    + 也是相关属性更新偶才会发动一次
